@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bannister In Home Care</title>
+  <meta name="description" content="Compassionate home care across Sydney, Gold Coast, Mid North Coast and Wollongong. Bannister In Home Care helps Australians live independently at home." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;800&family=Satisfy&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Brand */
+      --navy:#1e3564;
+      --orange:#faa21b;
+      --light:#b2d6ed;
+      --white:#ffffff;
+
+      /* UI */
+      --ink:#0f172a;
+      --text:#253047;
+      --muted:#e6eef6;
+      --radius:18px;
+      --shadow: 0 6px 26px rgba(7,20,45,.14), 0 2px 8px rgba(7,20,45,.08);
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: "Roboto", system-ui, -apple-system, Segoe UI, Inter, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1400px 700px at -10% -20%, rgba(178,214,237,.28), transparent 60%),
+        radial-gradient(1200px 600px at 110% 10%, rgba(250,162,27,.12), transparent 60%),
+        #f7fbff;
+      line-height:1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* ===== Top Nav ===== */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      background: var(--navy);
+      border-bottom: 3px solid var(--orange);
+    }
+    .nav .inner{
+      max-width:1200px; margin:0 auto; padding:10px 16px;
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      color:var(--white); text-decoration:none;
+      font-weight:800; letter-spacing:.3px;
+    }
+    .brand img{ width:40px; height:40px; object-fit:contain }
+    .links{ display:flex; flex-wrap:wrap; gap:10px }
+    .links a{
+      color:var(--white); text-decoration:none; font-weight:700;
+      padding:8px 12px; border-radius:12px;
+    }
+    .links a:hover{ background:rgba(255,255,255,.14) }
+
+    .wrap{ max-width:1200px; margin:0 auto; padding:28px 16px 56px; }
+
+    /* ===== Hero ===== */
+    .hero{
+      display:grid; grid-template-columns: 100px 1fr; gap:18px;
+      background:
+        linear-gradient(120deg, color-mix(in srgb, var(--navy) 84%, var(--light)), var(--navy));
+      color:var(--white);
+      padding:24px; border-radius:var(--radius); box-shadow:var(--shadow);
+      border: 2px solid var(--orange);
+      overflow:hidden;
+    }
+    @media (min-width:820px){ .hero{ grid-template-columns: 132px 1fr; gap:22px; padding:28px; } }
+
+    .hero-logo{
+      background:var(--white); border-radius:999px; padding:10px;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow: 0 8px 32px rgba(0,0,0,.18);
+    }
+    .hero-logo img{ width:100%; height:auto }
+
+    h1{
+      margin:0 0 6px;
+      font-weight:800; color:var(--white);
+      font-size:clamp(26px, 3.2vw, 44px);
+      letter-spacing:.2px;
+    }
+    .strap{
+      margin:2px 0 0;
+      font-size: clamp(16px, 1.4vw, 20px);
+      color: color-mix(in srgb, white 92%, var(--light));
+    }
+    .script{
+      font-family: "Satisfy", cursive;
+      color: var(--light);
+      font-size: clamp(18px, 2vw, 24px);
+    }
+
+    /* ===== Sections / Cards ===== */
+    section{ scroll-margin-top:80px; }
+    .grid{ display:grid; grid-template-columns:1fr; gap:18px; margin-top:22px; }
+    @media (min-width:980px){ .grid{ grid-template-columns: 1fr 1fr; } }
+
+    .card{
+      background:var(--white); border-radius:var(--radius);
+      box-shadow:var(--shadow); border:1px solid var(--muted);
+      padding:22px 20px;
+    }
+
+    h2{
+      margin:0 0 8px; color:var(--navy);
+      font-weight:800; font-size:clamp(20px, 2.1vw, 26px);
+    }
+    p{ margin:10px 0 }
+
+    ul{ margin:10px 0 0 18px; padding:0 }
+    li{ margin:6px 0 }
+
+    a{ color: var(--navy); text-decoration: none; border-bottom:2px solid rgba(30,53,100,.18); }
+    a:hover{ border-bottom-color: var(--orange); }
+
+    /* ===== Fancy bullets ===== */
+    .ticks li{ list-style:none; position:relative; padding-left:28px }
+    .ticks li::before{
+      content:""; position:absolute; left:0; top:.5em;
+      width:14px; height:14px; border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, #fff 15%, var(--orange) 16% 60%, #c27500 61%);
+      box-shadow: 0 0 0 2px var(--light);
+      transform: translateY(-50%);
+    }
+
+    /* ===== Image gallery ===== */
+    .gallery{ display:grid; grid-template-columns:1fr; gap:18px; margin-top:18px; }
+    @media (min-width:720px){ .gallery{ grid-template-columns: 1fr 1fr; } }
+    .frame{
+      position:relative; border-radius:20px; overflow:hidden;
+      box-shadow:var(--shadow); background:var(--white);
+      border: 4px solid var(--navy);
+    }
+    .frame::after{
+      content:""; position:absolute; inset:10px;
+      border-radius:14px; border:4px solid var(--orange); pointer-events:none;
+    }
+    .frame img{ width:100%; height:100%; object-fit:cover; display:block }
+
+    /* ===== Coverage “pills” ===== */
+    .pill-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:8px; }
+    .pill{
+      background:var(--white);
+      border:2px solid var(--navy); color:var(--navy); font-weight:800;
+      border-radius:999px; padding:8px 14px; text-decoration:none;
+      box-shadow: 0 2px 10px rgba(0,0,0,.06); position:relative;
+    }
+    .pill::after{ content:""; position:absolute; inset:-3px; border-radius:999px; border:3px solid var(--orange) }
+
+    /* ===== CTA ===== */
+    .cta{
+      margin-top:22px; background:linear-gradient(180deg, var(--white), #f3f9ff);
+      border:2px solid var(--light); border-radius:var(--radius);
+      padding:18px; box-shadow:var(--shadow);
+    }
+    .actions{ display:flex; flex-wrap:wrap; gap:10px; margin-top:8px }
+    .btn{
+      display:inline-block; padding:12px 16px; border-radius:12px; font-weight:800;
+      background:var(--navy); color:#fff; border:2px solid var(--orange); text-decoration:none;
+    }
+    .btn:hover{ filter:brightness(1.05) }
+
+    footer{ margin-top:36px; color:#5b6b89; font-size:14px; text-align:center }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" role="navigation" aria-label="Primary">
+    <div class="inner">
+      <a class="brand" href="#top">
+        <img src="1080%20x1080%20no%20bg.png" alt="Bannister In Home Care logo">
+        <span>Bannister In Home Care</span>
+      </a>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#support">Who We Support</a>
+        <a href="#services">Services</a>
+        <a href="#coverage">Coverage</a>
+        <a href="#reviews">Reviews</a>
+      </div>
+    </div>
+  </nav>
+
+  <a id="top"></a>
+  <div class="wrap">
+
+    <!-- ===== HERO ===== -->
+    <header class="hero" role="banner" aria-label="Bannister In Home Care">
+      <div class="hero-logo" aria-hidden="true">
+        <img src="1080%20x1080%20no%20bg.png" alt="Bannister In Home Care logo">
+      </div>
+      <div>
+        <h1>Bannister In Home Care</h1>
+        <p class="strap"><strong>Compassionate Support, Right at Home</strong></p>
+        <p>At Bannister In Home Care, we’re passionate about helping Australians live life on their own terms—comfortably, safely, and independently in the place they know best: home. As a trusted provider of personalised care services, we work closely with individuals and families to deliver support that’s respectful, reliable, and tailored to your unique needs.</p>
+        <p>Whether you're a senior, living with a disability, or simply need a helping hand around the house, our mission is to make everyday life easier and more enjoyable. We’re proud to be one of Australia’s leading <a href="https://www.bannisterinhomecare.com.au/" target="_blank" rel="noopener">home care package providers</a>, offering flexible options that empower you to live well—your way.</p>
+        <p class="script">“Care that feels like family.”</p>
+      </div>
+    </header>
+
+    <!-- ===== ABOUT + GALLERY ===== -->
+    <section id="about" class="grid" aria-label="About and Photos">
+      <article class="card">
+        <h2>About Bannister</h2>
+        <p>We partner with you and your family to ensure your needs are met every step of the way — with dignity, respect and genuine warmth.</p>
+
+        <div class="gallery" aria-label="Care in action">
+          <figure class="frame">
+            <img src="Home%20Care%20Google%20img%206.png" alt="Support worker chatting with a client outdoors over coffee">
+          </figure>
+          <figure class="frame">
+            <img src="Home%20Care%20Google%20Image%201.png" alt="Carer assisting an older adult at home with a warm drink">
+          </figure>
+        </div>
+      </article>
+
+      <article id="support" class="card">
+        <h2>Who We Support</h2>
+        <ul class="ticks">
+          <li><a href="https://www.bannisterinhomecare.com.au/home-care-packages" target="_blank" rel="noopener">Home Care Package recipients</a> – comprehensive support for seniors receiving HCP funding.</li>
+          <li><a href="https://www.bannisterinhomecare.com.au/private-clients" target="_blank" rel="noopener">Private Clients</a> – direct access to our services — no need for government funding.</li>
+          <li><a href="https://www.bannisterinhomecare.com.au/ndis" target="_blank" rel="noopener">NDIS clients</a> – assistance for seniors living with a disability to maintain independence.</li>
+          <li><a href="https://www.bannisterinhomecare.com.au/selfmanagedhomecare" target="_blank" rel="noopener">Self-Managed Home Care Package Providers</a> – more choice and more control.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services" class="card" aria-label="Our Home Care Services" style="margin-top:22px">
+      <h2><a href="https://www.bannisterinhomecare.com.au/home-care-services" target="_blank" rel="noopener">Our Home Care Services</a></h2>
+      <p>We provide a wide range of professional and compassionate home care services, designed to make everyday living more manageable and enjoyable. Our services include:</p>
+      <ul class="ticks">
+        <li><a href="https://www.bannisterinhomecare.com.au/personal-care" target="_blank" rel="noopener">Personal Care</a> — gentle, respectful help with bathing, dressing, and grooming.</li>
+        <li><a href="https://www.bannisterinhomecare.com.au/domestic-assistance" target="_blank" rel="noopener">Domestic Assistance</a> — support with cleaning, laundry, and household tasks.</li>
+        <li><a href="https://www.bannisterinhomecare.com.au/social-service" target="_blank" rel="noopener">Social Companionship</a> — friendly visits to foster connection and conversation.</li>
+        <li><a href="https://www.bannisterinhomecare.com.au/transport-services" target="_blank" rel="noopener">Transport</a> — safe, dependable travel to appointments and errands.</li>
+        <li><a href="https://www.bannisterinhomecare.com.au/meal-preparation" target="_blank" rel="noopener">Meal Preparation</a> — help with cooking and nutrition to support healthy living.</li>
+      </ul>
+    </section>
+
+    <!-- ===== COVERAGE ===== -->
+    <section id="coverage" class="card" aria-label="Service Coverage" style="margin-top:22px">
+      <h2>Our Service Coverage</h2>
+      <p>Bannister In Home Care proudly serves these locations with local teams available in:</p>
+      <div class="pill-row">
+        <a class="pill" href="https://www.bannisterinhomecare.com.au/home-care-sydney" target="_blank" rel="noopener">Sydney</a>
+        <a class="pill" href="https://www.bannisterinhomecare.com.au/bihcqld" target="_blank" rel="noopener">Gold Coast</a>
+        <a class="pill" href="https://www.bannisterinhomecare.com.au/aged-care-and-ndis-disability-care-mid-coast-nsw" target="_blank" rel="noopener">Mid North Coast</a>
+        <a class="pill" href="https://www.bannisterinhomecare.com.au/wollongong-home-care" target="_blank" rel="noopener">Wollongong</a>
+      </div>
+      <p style="margin-top:10px; color:#415b86"><strong>Gold Coast</strong> – Brisbane, Ballina, Sunshine Coast &nbsp;•&nbsp; <strong>Mid North Coast</strong> – Forster, Tuncurry, Taree, Smiths Lake &nbsp;•&nbsp; <strong>Wollongong</strong> – Shellharbour, Kiama</p>
+    </section>
+
+    <!-- ===== REVIEWS CTA ===== -->
+    <section id="reviews" class="cta" aria-label="Read reviews">
+      <h2 style="margin-top:0">Read reviews about our Home Care</h2>
+      <p>We’re humbled by the heartfelt feedback we receive from clients and families who value the professionalism, warmth, and dedication of our carers. Their stories inspire us every day — and we invite you to read their reviews to see the difference Bannister In Home Care can make.</p>
+      <div class="actions">
+        <a class="btn" href="https://www.bannisterinhomecare.com.au/testimonials-and-reviews" target="_blank" rel="noopener">Read Our Client Reviews</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; <span id="year"></span> Bannister In Home Care. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
